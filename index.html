@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IL Producciones | Fotografía y Producción Audiovisual</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="assets/logo/logo.png" alt="IL Producciones">
+    </div>
+
+    <ul class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<header class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>IVÁN LEÓN</h1>
+
+        <p>
+            Fotografía · Producción Audiovisual · Contenido Visual
+        </p>
+
+        <a href="#portfolio" class="boton">
+            Ver Portfolio
+        </a>
+
+    </div>
+
+</header>
+
+<div class="filtros">
+
+    <button class="activo" data-categoria="todas">Todas</button>
+    <button data-categoria="bodas">Bodas</button>
+
+<button data-categoria="documental">Documental</button>
+
+<button data-categoria="eventos">Eventos</button>
+
+<button data-categoria="exposiciones">Exposiciones</button>
+
+<button data-categoria="moda">Moda</button>
+
+<button data-categoria="parejas">Parejas</button>
+
+<button data-categoria="video">Vídeo</button>
+
+</div>
+
+<section id="portfolio" class="portfolio reveal">
+
+    <div class="section-title">
+        <span>PORTFOLIO</span>
+        <h2>Algunos de mis trabajos</h2>
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+
+</section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox">
+
+    <span class="cerrar">&times;</span>
+
+    <span class="anterior">&#10094;</span>
+
+    <img id="lightbox-img">
+
+    <span class="siguiente">&#10095;</span>
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
