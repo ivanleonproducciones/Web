@@ -1,98 +1,415 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IL Producciones | Fotografía y Producción Audiovisual</title>
+
+    <title>IVÁN LEÓN | Fotografía, Vídeo y Producción Audiovisual</title>
+
+    <meta name="description" content="Portfolio profesional de Iván León. Fotografía, vídeo y producción audiovisual para empresas, marcas, eventos y particulares.">
+
+    <meta name="author" content="Iván León">
+
+    <link rel="icon" href="assets/logo/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- ==========================================
+     NAVBAR
+=========================================== -->
+
 <nav class="navbar">
-    <div class="logo">
-        <img src="assets/logo/logo.png" alt="IL Producciones">
+
+    <div class="container">
+
+        <a href="#inicio" class="logo">
+
+            <img src="assets/logo/logo.png" alt="Logo de IVÁN LEÓN Producciones">
+
+        </a>
+
+        <ul class="menu">
+
+            <li><a href="#inicio">Inicio</a></li>
+
+            <li><a href="#portfolio">Portfolio</a></li>
+
+            <li><a href="#servicios">Servicios</a></li>
+
+            <li><a href="#contacto">Contacto</a></li>
+
+        </ul>
+
     </div>
 
-    <ul class="menu">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
 </nav>
+
+<!-- ==========================================
+     HERO
+=========================================== -->
 
 <header class="hero" id="inicio">
 
     <div class="hero-content">
 
-        <h1>IVÁN LEÓN</h1>
+       <h1>
 
+    Iván León
+
+    <span>Producciones</span>
+
+</h1>
         <p>
-            Fotografía · Producción Audiovisual · Contenido Visual
+            Fotografía, vídeo y producción audiovisual para empresas, marcas, eventos y particulares.
         </p>
 
         <a href="#portfolio" class="boton">
-            Ver Portfolio
+            Ver portfolio
         </a>
 
     </div>
 
 </header>
+<!-- ==========================================
+     PORTFOLIO
+=========================================== -->
 
-<div class="filtros">
+<section class="portfolio" id="portfolio">
 
-    <button class="activo" data-categoria="todas">Todas</button>
-    <button data-categoria="bodas">Bodas</button>
+    <div class="container">
 
-<button data-categoria="documental">Documental</button>
+        <div class="section-title">
 
-<button data-categoria="eventos">Eventos</button>
+            <span>PORTFOLIO</span>
 
-<button data-categoria="exposiciones">Exposiciones</button>
+            <h2>Algunos de mis trabajos</h2>
 
-<button data-categoria="moda">Moda</button>
+            <p>
+                Una selección de proyectos de fotografía, vídeo y producción
+                audiovisual realizados para empresas, instituciones y clientes particulares.
+            </p>
 
-<button data-categoria="parejas">Parejas</button>
+        </div>
 
-<button data-categoria="video">Vídeo</button>
+        <div class="portfolio-grid">
 
-</div>
+            <a href="#" class="portfolio-card bodas" data-gallery="bodas">
 
-<section id="portfolio" class="portfolio reveal">
+                <img src="assets/gallery/bodas/bodas1.jpg" alt="Fotografía de bodas">
 
-    <div class="section-title">
-        <span>PORTFOLIO</span>
-        <h2>Algunos de mis trabajos</h2>
+                <div class="overlay">
+
+                    <span>Wedding Photography</span>
+
+                    <h3>Bodas</h3>
+
+                </div>
+
+            </a>
+
+           <a href="#" class="portfolio-card documental" data-gallery="documental">
+
+                <img src="assets/gallery/documental/documental1.jpg" alt="Fotografía documental">
+
+                <div class="overlay">
+
+                    <span>Street & Documentary</span>
+
+                    <h3>Documental</h3>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="portfolio-card eventos" data-gallery="eventos">
+
+                <img src="assets/gallery/eventos/eventos1.jpg" alt="Fotografía de eventos">
+
+                <div class="overlay">
+
+                    <span>Eventos</span>
+
+                    <h3>Eventos</h3>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="portfolio-card moda" data-gallery="moda">
+
+                <img src="assets/gallery/moda/moda1.jpg" alt="Fotografía de moda">
+
+                <div class="overlay">
+
+                    <span>Fashion</span>
+
+                    <h3>Moda</h3>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="portfolio-card parejas" data-gallery="parejas">
+
+                <img src="assets/gallery/parejas/parejas1.jpg" alt="Sesiones de pareja">
+
+                <div class="overlay">
+
+                    <span>Couples</span>
+
+                    <h3>Parejas</h3>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="portfolio-card exposiciones" data-gallery="exposiciones">
+
+                <img src="assets/gallery/exposiciones/exposiciones1.jpg" alt="Exposiciones">
+
+                <div class="overlay">
+
+                    <span>Museos & Exposiciones</span>
+
+                    <h3>Exposiciones</h3>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="portfolio-card video" data-gallery="video">
+
+                <img src="assets/gallery/video/video1.jpg" alt="Producción audiovisual">
+
+                <div class="overlay">
+
+                    <span>Video Production</span>
+
+                    <h3>Vídeo</h3>
+
+                </div>
+
+            </a>
+
+        </div>
+
     </div>
-
-    <div class="gallery" id="gallery"></div>
 
 </section>
 
-<!-- LIGHTBOX -->
+<!-- ==========================================
+     SERVICIOS
+=========================================== -->
+
+<section class="services bg-light" id="servicios">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>SERVICIOS</span>
+
+            <h2>¿Qué puedo hacer por ti?</h2>
+
+            <p>
+                Soluciones visuales adaptadas a empresas, instituciones y particulares,
+                cuidando cada detalle desde la planificación hasta la entrega final.
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <article class="service">
+
+                <h3>Fotografía</h3>
+
+                <p>
+                    Reportajes de bodas, eventos, fotografía corporativa, producto,
+                    arquitectura, exposiciones y sesiones personalizadas.
+                </p>
+
+            </article>
+
+            <article class="service">
+
+                <h3>Producción audiovisual</h3>
+
+                <p>
+                    Grabación y edición de vídeos promocionales, contenido para redes
+                    sociales, documentales y proyectos culturales.
+                </p>
+
+            </article>
+
+            <article class="service">
+
+                <h3>Edición y retoque</h3>
+
+                <p>
+                    Revelado profesional, retoque fotográfico, restauración de imágenes,
+                    inteligencia artificial y creación de contenido visual.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     CONTACTO
+=========================================== -->
+
+<section class="contact" id="contacto">
+
+    <div class="container">
+
+        <div class="contact-wrapper">
+
+            <div class="contact-info">
+
+                <span>CONTACTO</span>
+
+                <h2>Hablemos de tu proyecto.</h2>
+
+                <p>
+                    Si necesitas un fotógrafo o un profesional audiovisual para tu
+                    empresa, evento o proyecto, estaré encantado de ayudarte.
+                </p>
+
+                <p><strong>Email</strong><br>ivanleonproducciones@gmail.com</p>
+
+                <p><strong>Ubicación</strong><br>Málaga · España</p>
+
+            </div>
+
+            <form class="contact-form" action="#">
+
+                <input
+                    type="text"
+                    placeholder="Nombre"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Correo electrónico"
+                    required
+                >
+
+                <textarea
+                    placeholder="Cuéntame tu proyecto..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="boton-secundario">
+
+                    Enviar mensaje
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     FOOTER
+=========================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-top">
+
+            <a href="#inicio" class="footer-logo">
+
+                <img src="assets/logo/logo.png" alt="IVÁN LEÓN Producciones">
+
+            </a>
+
+            <nav>
+
+                <ul class="footer-menu">
+
+                    <li><a href="#inicio">Inicio</a></li>
+
+                    <li><a href="#portfolio">Portfolio</a></li>
+
+                    <li><a href="#servicios">Servicios</a></li>
+
+                    <li><a href="#contacto">Contacto</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 IVÁN LEÓN Producciones · Málaga · España. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ==========================================
+     LIGHTBOX
+=========================================== -->
 
 <div class="lightbox">
 
-    <span class="cerrar">&times;</span>
 
-    <span class="anterior">&#10094;</span>
+    <button class="cerrar" aria-label="Cerrar">
+        &times;
+    </button>
 
-    <img id="lightbox-img">
+    <button class="anterior" aria-label="Anterior">
+        &#10094;
+    </button>
 
-    <span class="siguiente">&#10095;</span>
+    <img
+        id="lightbox-img"
+        src=""
+        alt="Imagen ampliada"
+    >
+
+    <div class="contador"></div>
+
+    <button class="siguiente" aria-label="Siguiente">
+        &#10095;
+    </button>
+
 
 </div>
-
 
 <script src="js/script.js"></script>
 
 </body>
+
 </html>

@@ -1,266 +1,187 @@
-// ==========================
-// PORTFOLIO
-// ==========================
+//==================================
+// GALERÍAS
+//==================================
 
-const portfolio = [
+const galerias = {
 
-    {
-        imagen: "assets/gallery/bodas/bodas1.jpg",
-        titulo: "Bodas",
-        categoria: "bodas",
-        cantidad: 7
-    },
+    bodas: 7,
+    documental: 4,
+    eventos: 11,
+    exposiciones: 2,
+    moda: 28,
+    parejas: 4,
+    video: 1
 
-    {
-        imagen: "assets/gallery/documental/documental1.jpg",
-        titulo: "Documental",
-        categoria: "documental",
-        cantidad: 4
-    },
+};
 
-    {
-        imagen: "assets/gallery/eventos/eventos1.png",
-        titulo: "Eventos",
-        categoria: "eventos",
-        cantidad: 11
-    },
 
-    {
-        imagen: "assets/gallery/exposiciones/exposiciones1.png",
-        titulo: "Exposiciones",
-        categoria: "exposiciones",
-        cantidad: 2
-    },
-
-    {
-        imagen: "assets/gallery/moda/moda1.jpg",
-        titulo: "Moda",
-        categoria: "moda",
-        cantidad: 28
-    },
-
-    {
-        imagen: "assets/gallery/parejas/parejas1.jpg",
-        titulo: "Parejas",
-        categoria: "parejas",
-        cantidad: 4
-    },
-
-    {
-        imagen: "assets/gallery/video/video1.png",
-        titulo: "Vídeo",
-        categoria: "video",
-        cantidad: 1
-    }
-
-];
-
-// ==========================
+//==================================
 // NAVBAR
-// ==========================
+//==================================
 
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 80) {
-
-        navbar.classList.add("scrolled");
-
-    } else {
-
-        navbar.classList.remove("scrolled");
-
-    }
+    navbar.classList.toggle("scrolled", window.scrollY > 80);
 
 });
 
-// ==========================
-// GALERÍA
-// ==========================
-
-const gallery = document.getElementById("gallery");
-
-function cargarGaleria(categoria = "todas") {
-
-    gallery.innerHTML = "";
-
-const fotos = categoria === "todas"        ? portfolio
-        : portfolio.filter(f => f.categoria === categoria);
-
-    fotos.forEach(foto => {
-
-        gallery.innerHTML += `
-
-        <div class="card ${foto.tipo}">
-
-            <img src="${foto.imagen}" alt="${foto.titulo}">
-
-            <div class="overlay">
-
-                <h3>${foto.titulo}</h3>
-
-            </div>
-
-        </div>
-
-        `;
-
-    });
-
-    iniciarLightbox();
-
-}
-
-cargarGaleria();
-
-// ==========================
-// FILTROS
-// ==========================
-
-const botones = document.querySelectorAll(".filtros button");
-
-botones.forEach(boton => {
-
-    boton.addEventListener("click", () => {
-
-        botones.forEach(b => b.classList.remove("activo"));
-
-        boton.classList.add("activo");
-
-        cargarGaleria(boton.dataset.categoria);
-
-    });
-
-});
-
-// ==========================
+//==================================
 // LIGHTBOX
-// ==========================
+//==================================
 
 const lightbox = document.querySelector(".lightbox");
-const imagen = document.getElementById("lightbox-img");
 
-const cerrar = document.querySelector(".cerrar");
+const lightboxImg = document.getElementById("lightbox-img");
 
-const anterior = document.querySelector(".anterior");
+const btnCerrar = document.querySelector(".cerrar");
 
-const siguiente = document.querySelector(".siguiente");
+const btnAnterior = document.querySelector(".anterior");
 
-let indiceActual = 0;
+const btnSiguiente = document.querySelector(".siguiente");
 
-function iniciarLightbox() {
+const contador = document.querySelector(".contador");
 
-    const cards = document.querySelectorAll(".card");
+const tarjetas = document.querySelectorAll(".portfolio-card");
 
-    cards.forEach((card, index) => {
 
-        card.onclick = () => {
+let categoriaActual = "";
 
-            indiceActual = index;
+let imagenActual = 1;
 
-            imagen.src = card.querySelector("img").src;
+let totalImagenes = 0;  
 
-            lightbox.classList.add("activo");
+//==================================
+// FUNCIONES
+//==================================
 
-        };
+function mostrarImagen() {
 
-    });
+    lightboxImg.src = `assets/gallery/${categoriaActual}/${categoriaActual}${imagenActual}.jpg`;
+
+    contador.textContent = `${imagenActual} / ${totalImagenes}`;
 
 }
 
-cerrar.onclick = () => {
+function abrirGaleria(categoria) {
+
+    categoriaActual = categoria;
+
+    imagenActual = 1;
+
+    totalImagenes = galerias[categoria];
+
+    mostrarImagen();
+
+    lightbox.classList.add("activo");
+
+document.body.style.overflow = "hidden";
+
+}
+//==================================
+// TARJETAS DEL PORTFOLIO
+//==================================
+
+tarjetas.forEach(tarjeta => {
+
+    tarjeta.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        abrirGaleria(tarjeta.dataset.gallery);
+
+    });
+
+});
+//==================================
+// BOTONES DEL LIGHTBOX
+//==================================
+
+btnCerrar.addEventListener("click", () => {
 
     lightbox.classList.remove("activo");
 
-};
+    document.body.style.overflow = "";
 
-lightbox.onclick = (e) => {
+});
+
+lightbox.addEventListener("click", (e) => {
 
     if (e.target === lightbox) {
 
         lightbox.classList.remove("activo");
 
-    }
-
-};
-
-siguiente.onclick = () => {
-
-    const cards = document.querySelectorAll(".card");
-
-    indiceActual++;
-
-    if (indiceActual >= cards.length) {
-
-        indiceActual = 0;
-
-    }
-
-    imagen.src = cards[indiceActual].querySelector("img").src;
-
-};
-
-anterior.onclick = () => {
-
-    const cards = document.querySelectorAll(".card");
-
-    indiceActual--;
-
-    if (indiceActual < 0) {
-
-        indiceActual = cards.length - 1;
-
-    }
-
-    imagen.src = cards[indiceActual].querySelector("img").src;
-
-};
-
-document.addEventListener("keydown", (e) => {
-
-    if (!lightbox.classList.contains("activo")) return;
-
-    if (e.key === "Escape") {
-
-        lightbox.classList.remove("activo");
-
-    }
-
-    if (e.key === "ArrowRight") {
-
-        siguiente.click();
-
-    }
-
-    if (e.key === "ArrowLeft") {
-
-        anterior.click();
+        document.body.style.overflow = "";
 
     }
 
 });
 
-// ==========================
-// ANIMACIÓN AL HACER SCROLL
-// ==========================
 
-const reveals = document.querySelectorAll(".reveal");
+btnSiguiente.addEventListener("click", () => {
 
-function revelar() {
+    imagenActual++;
 
-    reveals.forEach(seccion => {
+    if (imagenActual > totalImagenes) {
 
-        if (seccion.getBoundingClientRect().top < window.innerHeight - 120) {
+        imagenActual = 1;
 
-            seccion.classList.add("visible");
+    }
 
-        }
+    mostrarImagen();
 
-    });
+});
 
-}
 
-window.addEventListener("scroll", revelar);
+btnAnterior.addEventListener("click", () => {
 
-revelar();
+    imagenActual--;
+
+    if (imagenActual < 1) {
+
+        imagenActual = totalImagenes;
+
+    }
+
+    mostrarImagen();
+
+});
+
+//==================================
+// TECLADO
+//==================================
+
+document.addEventListener("keydown", (e) => {
+
+    if (!lightbox.classList.contains("activo")) return;
+
+    switch (e.key) {
+
+        case "Escape":
+
+            lightbox.classList.remove("activo");
+
+            break;
+
+        case "ArrowRight":
+
+            btnSiguiente.click();
+
+            break;
+
+        case "ArrowLeft":
+
+            btnAnterior.click();
+
+            break;
+
+    }
+
+}); 
+
+lightboxImg.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+});

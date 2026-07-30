@@ -1,284 +1,518 @@
+/*==================================================
+    IVÁN LEÓN PRODUCCIONES
+    CSS v2.0
+==================================================*/
+
+
+/*==================================================
+    VARIABLES
+==================================================*/
+
 :root{
-    --blanco-logo: #F5F5F5;
+
+    --color-fondo:#ffffff;
+    --color-texto:#111111;
+    --color-texto-sec:#6e6e6e;
+    --color-blanco:#f5f5f5;
+
+    --max-width:1400px;
+
+    --radius:22px;
+
+    --transition:.35s ease;
+
+    --shadow:0 15px 45px rgba(0,0,0,.12);
+
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+/*==================================================
+    RESET
+==================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+
+    scroll-behavior:smooth;
+
 }
 
-body {
-    font-family: "Manrope", sans-serif;
-    background: #ffffff;
-    color: #111111;
+body{
+
+    font-family:"Manrope",sans-serif;
+
+    background:var(--color-fondo);
+
+    color:var(--color-texto);
+
+    overflow-x:hidden;
+
+    line-height:1.5;
+
 }
 
-/* ---------- MENÚ ---------- */
+img{
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 25px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: transparent;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    display:block;
+
+    max-width:100%;
+
 }
 
-.logo img{
-    height:100px;
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
 }
 
-.menu{
-    display:flex;
-    gap:40px;
+ul{
+
     list-style:none;
-}
-
-.menu a{
-    text-decoration:none;
-    color:var(--blanco-logo);
-    font-weight:600;
-    transition:.3s;
-}
-
-.menu a:hover{
-    color:#666;
-}
-
-/* ---------- HERO ---------- */
-
-.hero{
-    height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
-    background:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url("../assets/gallery/hero.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-}
-.hero-content{
-    max-width:800px;
-}
-
-.hero h1{
-    font-size:72px;
-    font-weight:800;
-    letter-spacing:2px;
-    color:var(--blanco-logo);
-}
-
-.hero p{
-    margin-top:20px;
-    font-size:22px;
-   color:var(--blanco-logo);
-}
-
-.boton{
-    display:inline-block;
-    margin-top:40px;
-    padding:18px 40px;
-    background:#111;
-   color:var(--blanco-logo);
-    text-decoration:none;
-    border-radius:50px;
-    transition:.3s;
-}
-
-.boton:hover{
-    .hero-content{
-    max-width:800px;
-    transform:translateY(-60px);
-}
-    background:#333;
-}
-
-/* -------------------- */
-/* PORTFOLIO */
-/* -------------------- */
-
-.portfolio{
-    padding:120px 8%;
-    background:#ffffff;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:70px;
-}
-
-.section-title span{
-    letter-spacing:4px;
-    color:#888;
-    font-size:14px;
-}
-
-.section-title h2{
-    margin-top:15px;
-    font-size:42px;
-}
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:35px;
 
 }
 
-.card{
 
-    position:relative;
+/*==================================================
+    CONTENEDOR
+==================================================*/
 
-    overflow:hidden;
+.container{
 
-    border-radius:20px;
+    width:min(92%,1400px);
 
-    cursor:pointer;
+    margin:auto;
 
 }
 
-.card img{
+
+/*==================================================
+    NAVBAR
+==================================================*/
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
 
     width:100%;
 
-    height:520px;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-}
-
-.card:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        transparent,
-        rgba(0,0,0,.65)
-    );
+    z-index:1000;
 
     display:flex;
 
-    align-items:flex-end;
+    justify-content:space-between;
+    
+    align-items:center;
 
-    padding:30px;
+    padding:26px 6%;
+
+    transition:var(--transition);
+
+    background:transparent;
+
+}
+.navbar .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
 
 }
 
-.overlay h3{
+.logo{
 
-   color:var(--blanco-logo);
-
-    font-size:30px;
+    order:2;
 
 }
 
-/* -------------------- */
-/* MENÚ AL HACER SCROLL */
-/* -------------------- */
+.menu{
+
+    order:1;
+
+}
+
+
+.logo img{
+
+    height:200px;
+
+    transition:var(--transition);
+
+}
+
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+}
+
+
+.menu a{
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:.4px;
+
+    transition:var(--transition);
+
+}
+
+.menu a:hover{
+
+    opacity:.7;
+
+}
+
+
+/*==================================================
+    NAVBAR SCROLL
+==================================================*/
 
 .navbar.scrolled{
 
-    background:rgba(255,255,255,.96);
+    background:rgba(255,255,255,.92);
 
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    backdrop-filter:blur(18px);
 
-    transition:.35s;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
-}
-
-.navbar.scrolled .menu a{
-
-    color:#111;
+    padding:18px 6%;
 
 }
 
 .navbar.scrolled .logo img{
 
-    filter:none;
+    height:75px;
 
 }
 
-/* --------- Portfolio Premium -------- */
+.navbar.scrolled .menu a{
 
-.gallery{
+    color:var(--color-texto);
+
+}
+
+/*==================================================
+    HERO
+==================================================*/
+
+.hero{
+
+    position:relative;
+
+    height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.55) 0%,
+        rgba(0,0,0,.35) 40%,
+        rgba(0,0,0,.18) 70%,
+        rgba(0,0,0,.05) 100%
+    ),
+    url("../assets/gallery/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center right;
+
+}
+
+
+/* Contenedor */
+
+.hero-content{
+
+    width:min(92%,1400px);
+
+    margin:auto;
+
+    z-index:2;
+
+}
+
+
+/* Texto superior */
+
+.hero-content::before{
+
+    content:"FOTOGRAFÍA · VÍDEO · PRODUCCIÓN AUDIOVISUAL";
+
+    display:block;
+
+    margin-bottom:28px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:5px;
+
+}
+
+
+/* Título */
+
+.hero h1{
+
+    max-width:700px;
+
+    font-size:clamp(70px,8vw,120px);
+
+    line-height:.92;
+
+    color:white;
+
+    font-weight:800;
+
+    letter-spacing:-4px;
+
+}
+
+
+/* Descripción */
+
+.hero p{
+
+    margin-top:35px;
+
+    max-width:620px;
+
+    font-size:24px;
+
+    line-height:1.7;
+
+    color:rgba(255,255,255,.92);
+
+}
+
+
+/* Botón */
+
+.boton{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:55px;
+
+    padding:18px 42px;
+
+    border:2px solid white;
+
+    border-radius:60px;
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+
+.boton:hover{
+
+    background:white;
+
+    color:#111;
+
+    transform:translateY(-6px);
+
+}
+
+
+/* Flecha */
+
+.boton::after{
+
+    content:"→";
+
+    margin-left:12px;
+
+    transition:.35s;
+
+}
+
+
+.boton:hover::after{
+
+    transform:translateX(6px);
+
+}
+
+/*==================================================
+    PORTFOLIO
+==================================================*/
+
+.portfolio{
+
+    padding:140px 0;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    color:#999;
+
+    letter-spacing:5px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+.section-title h2{
+
+    margin:20px 0;
+
+    font-size:58px;
+
+    font-weight:800;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#777;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+
+/* GRID */
+
+.portfolio-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(2,1fr);
 
-    gap:25px;
+    gap:30px;
 
 }
 
-.card{
+
+/* TARJETAS */
+
+.portfolio-card{
 
     position:relative;
 
     overflow:hidden;
 
-    border-radius:22px;
+    border-radius:24px;
 
-    height:400px;
+    box-shadow:var(--shadow);
+
+    transition:
+transform .45s ease,
+box-shadow .45s ease;
 
 }
 
-.card img{
+
+/* ALTURAS */
+
+.bodas,
+.exposiciones,
+.video{
+
+    height:430px;
+
+    grid-column:1/3;
+
+}
+
+.documental,
+.eventos,
+.moda,
+.parejas{
+
+    height:320px;
+
+}
+
+
+/* IMAGEN */
+
+.portfolio-card img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
 
-    transition:.6s;
+transition:transform .7s ease;
+}
+
+
+/* HOVER */
+
+.portfolio-card:hover{
+
+    transform:translateY(-10px);
 
 }
 
-.card:hover img{
+.portfolio-card:hover img{
 
     transform:scale(1.08);
 
 }
 
-.card.tall{
 
-    grid-row:span 1;
-
-}
-
-.card.wide{
-
-    grid-column:span 1;
-
-}
+/* OVERLAY */
 
 .overlay{
 
@@ -288,30 +522,788 @@ body {
 
     display:flex;
 
-    align-items:flex-end;
+    flex-direction:column;
 
-    padding:35px;
+    justify-content:flex-end;
+
+    padding:40px;
 
     background:linear-gradient(
-        transparent,
-        rgba(0,0,0,.65)
+        transparent 45%,
+        rgba(0,0,0,.60)
     );
+
+}
+
+.overlay span{
+
+    color:white;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    margin-bottom:12px;
+
+    opacity:.85;
 
 }
 
 .overlay h3{
 
-  color:var(--blanco-logo);
+    color:white;
 
-    font-size:34px;
+    font-size:42px;
 
     font-weight:700;
 
 }
 
-/*----------------------*/
-/* LIGHTBOX */
-/*----------------------*/
+/*==================================================
+    SEPARADORES DE SECCIÓN
+==================================================*/
+
+section{
+
+    position:relative;
+
+}
+
+section + section{
+
+    padding-top:40px;
+
+}
+
+
+/*==================================================
+    ANIMACIONES
+==================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/*==================================================
+    EFECTOS GENERALES
+==================================================*/
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+::selection{
+
+    background:#111;
+
+    color:white;
+
+}
+
+
+/*==================================================
+    BOTONES GENERALES
+==================================================*/
+
+.boton-secundario{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 36px;
+
+    border-radius:60px;
+
+    border:2px solid #111;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.boton-secundario:hover{
+
+    background:#111;
+
+    color:white;
+
+}
+
+
+/*==================================================
+    SERVICIOS
+==================================================*/
+
+.services{
+
+    padding:160px 0;
+
+    background:#fafafa;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.service{
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.service:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.service h3{
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+}
+
+.service p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+
+/*==================================================
+    FONDOS SUAVES
+==================================================*/
+
+.bg-light{
+
+    background:#fafafa;
+
+}
+
+.bg-white{
+
+    background:white;
+
+}
+
+/*==================================================
+    CONTACTO
+==================================================*/
+
+.contact{
+
+    padding:160px 0;
+
+    background:#fff;
+
+}
+
+.contact-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.contact-info h2{
+
+    font-size:56px;
+
+    line-height:1;
+
+    margin-bottom:30px;
+
+}
+
+.contact-info p{
+
+    font-size:20px;
+
+    color:var(--color-texto-sec);
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+
+}
+
+.contact-info a{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.contact-info a:hover{
+
+    opacity:.7;
+
+}
+
+
+/*==================================================
+    FORMULARIO
+==================================================*/
+
+.contact-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#f6f6f6;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    transition:var(--transition);
+
+}
+
+.contact-form textarea{
+
+    min-height:180px;
+
+    resize:vertical;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    outline:none;
+
+    background:white;
+
+    box-shadow:0 0 0 2px #111;
+
+}
+
+
+/*==================================================
+    FOOTER
+==================================================*/
+
+footer{
+
+    background:#111;
+
+    color:white;
+
+    padding:80px 0 40px;
+
+}
+
+.footer-container{
+
+    width:min(92%,1400px);
+
+    margin:auto;
+
+}
+
+.footer-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+    margin-bottom:60px;
+
+}
+
+.footer-logo img{
+
+    height:90px;
+
+}
+
+.footer-menu{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+.footer-menu a{
+
+    color:rgba(255,255,255,.85);
+
+    transition:var(--transition);
+
+}
+
+.footer-menu a:hover{
+
+    color:white;
+
+}
+
+.footer-bottom{
+
+    padding-top:30px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:14px;
+
+}
+
+
+/*==================================================
+    UTILIDADES
+==================================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-1{margin-top:20px;}
+.mt-2{margin-top:40px;}
+.mt-3{margin-top:60px;}
+.mt-4{margin-top:80px;}
+
+.mb-1{margin-bottom:20px;}
+.mb-2{margin-bottom:40px;}
+.mb-3{margin-bottom:60px;}
+.mb-4{margin-bottom:80px;}
+/*==================================================
+    RESPONSIVE
+==================================================*/
+
+/*--------------------------
+    PORTÁTILES
+--------------------------*/
+
+@media (max-width:1200px){
+
+    .hero h1{
+
+        font-size:clamp(58px,7vw,90px);
+
+    }
+
+    .section-title h2{
+
+        font-size:48px;
+
+    }
+
+    .contact-info h2{
+
+        font-size:46px;
+
+    }
+
+}
+
+
+/*--------------------------
+    TABLET
+--------------------------*/
+
+@media (max-width:992px){
+
+    /* NAVBAR */
+
+    .navbar{
+
+        padding:22px 5%;
+
+    }
+
+    .logo img{
+
+        height:80px;
+
+    }
+
+    .menu{
+
+        gap:28px;
+
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        background-position:65% center;
+
+    }
+
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+    .hero h1{
+
+        max-width:none;
+
+        font-size:clamp(52px,8vw,72px);
+
+    }
+
+    .hero p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+        font-size:20px;
+
+    }
+
+
+    /* PORTFOLIO */
+
+    .portfolio-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .bodas,
+    .documental,
+    .eventos,
+    .moda,
+    .parejas,
+    .exposiciones,
+    .video{
+
+        grid-column:auto;
+
+        height:340px;
+
+    }
+
+
+    /* SERVICIOS */
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    /* CONTACTO */
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-top{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
+
+/*--------------------------
+    MÓVIL
+--------------------------*/
+
+@media (max-width:768px){
+
+    section{
+
+        padding:100px 0;
+
+    }
+
+
+    /* NAVBAR */
+
+    .menu{
+
+        display:none;
+
+    }
+
+    .logo img{
+
+        height:70px;
+
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        min-height:100vh;
+
+        background-position:70% center;
+
+    }
+
+    .hero-content::before{
+
+        letter-spacing:2px;
+
+        font-size:11px;
+
+    }
+
+    .hero h1{
+
+        font-size:48px;
+
+        letter-spacing:-2px;
+
+    }
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+    .boton{
+
+        width:100%;
+
+        max-width:280px;
+
+    }
+
+
+    /* TITULOS */
+
+    .section-title{
+
+        margin-bottom:50px;
+
+    }
+
+    .section-title h2{
+
+        font-size:38px;
+
+    }
+
+    .section-title p{
+
+        font-size:18px;
+
+    }
+
+
+    /* TARJETAS */
+
+    .portfolio-card{
+
+        border-radius:18px;
+
+    }
+
+    .overlay{
+
+        padding:24px;
+
+    }
+
+    .overlay h3{
+
+        font-size:30px;
+
+    }
+
+    .overlay span{
+
+        font-size:11px;
+
+    }
+
+
+    /* SERVICIOS */
+
+    .service{
+
+        padding:35px;
+
+    }
+
+    .service h3{
+
+        font-size:24px;
+
+    }
+
+    .service p{
+
+        font-size:16px;
+
+    }
+
+
+    /* CONTACTO */
+
+    .contact-info h2{
+
+        font-size:38px;
+
+    }
+
+    .contact-info p{
+
+        font-size:17px;
+
+    }
+
+
+    .contact-form input,
+    .contact-form textarea{
+
+        padding:16px 18px;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer-menu{
+
+        flex-direction:column;
+
+        gap:18px;
+
+    }
+
+}
+
+
+/*--------------------------
+    MÓVILES PEQUEÑOS
+--------------------------*/
+
+@media (max-width:480px){
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .section-title h2{
+
+        font-size:32px;
+
+    }
+
+    .portfolio-card{
+
+        height:260px !important;
+
+    }
+
+}
+
+/*==================================
+LIGHTBOX
+==================================*/
 
 .lightbox{
 
@@ -319,19 +1311,13 @@ body {
 
     inset:0;
 
-    background:rgba(0,0,0,.92);
+    background:rgba(0,0,0,.9);
 
-    display:flex;
+    display:none;
 
     justify-content:center;
 
     align-items:center;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:.35s;
 
     z-index:9999;
 
@@ -339,9 +1325,7 @@ body {
 
 .lightbox.activo{
 
-    opacity:1;
-
-    visibility:visible;
+    display:flex;
 
 }
 
@@ -349,106 +1333,66 @@ body {
 
     max-width:90%;
 
-    max-height:90%;
+    max-height:90vh;
 
-    border-radius:12px;
-
-    transform:scale(.85);
-
-    transition:.35s;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
+    object-fit:contain;
 
 }
 
-.lightbox.activo img{
-
-    transform:scale(1);
-
-}
-
-.cerrar{
-
-    position:absolute;
-
-    top:30px;
-
-    right:40px;
-
-    font-size:50px;
-
-    color:var(--blanco-logo);
-
-    cursor:pointer;
-
-    user-select:none;
-
-    transition:.3s;
-
-}
-
-.cerrar:hover{
-
-    transform:rotate(90deg);
-
-}
-
+.cerrar,
 .anterior,
 .siguiente{
 
     position:absolute;
 
-    top:50%;
+    background:none;
 
-    transform:translateY(-50%);
+    border:none;
 
-    color:var(--blanco-logo);
+    color:#fff;
 
-    font-size:55px;
+    font-size:3rem;
 
     cursor:pointer;
 
-    user-select:none;
+}
 
-    transition:.3s;
+.cerrar{
 
-    padding:20px;
+    top:25px;
+
+    right:35px;
 
 }
 
 .anterior{
 
-    left:30px;
+    left:35px;
+
+    top:50%;
+
+    transform:translateY(-50%);
 
 }
 
 .siguiente{
 
-    right:30px;
+    right:35px;
+
+    top:50%;
+
+    transform:translateY(-50%);
 
 }
 
-.anterior:hover,
-.siguiente:hover{
+.contador{
 
-    transform:translateY(-50%) scale(1.2);
+    position:absolute;
 
-}
+    bottom:25px;
 
-.reveal{
+    color:white;
 
-    opacity:0;
-
-    transform:translateY(70px);
-
-    transition:1s;
-
-}
-
-.reveal.visible{
-
-    opacity:1;
-
-    transform:translateY(0);
+    font-size:1rem;
 
 }
