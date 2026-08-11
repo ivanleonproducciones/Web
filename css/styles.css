@@ -291,9 +291,11 @@ button{
 
 .logo img{
 
-    height:200px;
-
-    transition:var(--transition);
+    height: 200px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: var(--transition);
 
 }
 
@@ -337,7 +339,8 @@ button{
 
 .navbar.scrolled .logo img{
 
-    height:75px;
+    height: 75px;
+    width: auto;
 
 }
 
@@ -1134,6 +1137,9 @@ footer{
     .logo img{
 
         height:80px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
 
     }
 
